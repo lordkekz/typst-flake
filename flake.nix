@@ -61,12 +61,13 @@
 
           rust-toolchain = fenix.packages.${system}.fromManifestFile rust-manifest;
 
-          rustflags =
-            if pkgs.stdenv.hostPlatform.rust.rustcTargetSpec == "x86_64-unknown-linux-gnu" then
-              # Upstream defaults to lld on x86_64-unknown-linux-gnu, we need to use the system linker
-              "-Clinker-features=-lld -Clink-self-contained=-linker"
-            else
-              null;
+          # Upstream defaults to lld on x86_64-unknown-linux-gnu, we need to use the system linker
+          rustflags = lib.concatStringsSep " " (
+            lib.optionals (pkgs.stdenv.hostPlatform.rust.rustcTargetSpec == "x86_64-unknown-linux-gnu") [
+              "-Clinker-features=-lld"
+              "-Clink-self-contained=-linker"
+            ]
+          );
 
           # Crane-based Nix flake configuration.
           # Based on https://github.com/ipetkov/crane/blob/master/examples/trunk-workspace/flake.nix
