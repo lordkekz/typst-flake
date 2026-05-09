@@ -11,7 +11,7 @@
     };
 
     typst = {
-      url = "github:typst/typst/0.14";
+      url = "github:typst/typst?ref=main";
       flake = false;
     };
 
