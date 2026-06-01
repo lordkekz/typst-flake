@@ -144,11 +144,11 @@
     "typst": {
       "flake": false,
       "locked": {
-        "lastModified": 1778590858,
-        "narHash": "sha256-8MUfTHxrHolg60MC8dM8FlHACLA4tSGDjlyUhqdf1EY=",
+        "lastModified": 1780309199,
+        "narHash": "sha256-mk+15bKAL3Z3T2ABLqE8Yi3PQzRouoXFWtbE7PO2mOk=",
         "owner": "typst",
         "repo": "typst",
-        "rev": "de6f400976f9bf6ab8b923d13a068722959d0070",
+        "rev": "39d7aeaaa47139ab9f6102c354ac3a7914b0e990",
         "type": "github"
       },
       "original": {
